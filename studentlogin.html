@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Caveat', cursive;
+font-family: 'Libre Baskerville', serif;
+            background-color: #dad7cd;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        
+        }
+
+        
+
+        form {
+            background-color: #3a5a40;
+            color: white;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #888888;
+            padding-right: 50px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-size: larger;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #dad7cd;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            color:#3a5a40;
+        }
+
+        /* Style for the "Back to Homepage" button */
+        a.back-to-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3a5a40;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: larger;
+        }
+
+        a.back-to-home:hover {
+            background-color: #0a0a0a;
+            color:#3a5a40;
+        }
+        .enclose{
+            margin-top: 100px;
+        }
+        #head{
+            font-weight: bolder;
+            font-size: x-large;
+                        color: #3a5a40;
+        
+         
+        }
+    </style>
+</head>
+<body>
+    <div class="enclose">
+        <h2 id="head">Student Login</h2>
+        <div id="fo">
+            <form action="http://localhost/dbms/student-login.php" method="POST">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="student-username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="student-password" required>
+
+                <div id="password-strength"></div>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+    <!-- Add the "Back to Homepage" button here -->
+    <a href="index.html" class="back-to-home">Back to Homepage</a>
+    <script>
+        const passwordInput = document.getElementById("password");
+        const passwordStrengthIndicator = document.getElementById("password-strength");
+
+        passwordInput.addEventListener("input", () => {
+            const password = passwordInput.value;
+            const strength = checkPasswordStrength(password);
+
+            let strengthText = "";
+            let strengthColor = "";
+
+            if (strength < 50) {
+                strengthText = "Weak";
+                strengthColor = "red";
+            } else if (strength < 80) {
+                strengthText = "Good";
+                strengthColor = "orange";
+            } else {
+                strengthText = "Strong";
+                strengthColor = "white";
+            }
+
+            passwordStrengthIndicator.innerHTML = `Password Strength: <span style="color: ${strengthColor}">${strengthText}</span>`;
+        });
+
+        function checkPasswordStrength(password) {
+            // You can implement a more robust password strength check here
+            // This is a simple example
+            const length = password.length;
+            return Math.min(length / 8 * 100, 100);
+        }
+    </script>
+</body>
+</html>
