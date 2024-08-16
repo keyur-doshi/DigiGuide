@@ -32,7 +32,7 @@ To get this project running on your local machine:
    git clone https://github.com/keyur-doshi/DigiGuide.git
    
 2. **Set up the database**:
-   - Import the `timetable.sql` file into your MySQL database via phpMyAdmin.
+   - Import the `proj.sql` file into your MySQL database via phpMyAdmin.
    - Or create your own database using the same schema.
 
 3. **Configure the Backend and set up the server**:
