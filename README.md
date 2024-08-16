@@ -42,7 +42,7 @@ To get this project running on your local machine:
 4. **Run the Project**:
    - Place the project in your XAMPP `htdocs` directory.
    - Start Apache and MySQL from the XAMPP control panel.
-   - Navigate to `http://localhost/time-table-scheduler` in your browser.
+   - Navigate to `http://localhost/DigiGuide` in your browser to automatically load the `index.html` file.
 
 ## 🧑‍🏫 Usage
 
