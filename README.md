@@ -76,7 +76,7 @@ If you find any bugs or have feature requests, please open an issue on the [GitH
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the (LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
